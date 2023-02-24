@@ -36,3 +36,8 @@ footer a{
 section#main-content {
     padding: 1rem;
 }
+
+.wrap {
+    padding-top: 40vh;
+    padding-bottom: 50vh;
+}

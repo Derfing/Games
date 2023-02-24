@@ -13,8 +13,8 @@
         <div class="container-fluid">
             <div class="row bg-dark text-white text-center">
                 <div class="col-sm-4"><a herf="#">На главную</a></div>
-                <div class="col-sm-4"><a herf="#">Каталог игр</a></div>
-                <div class="col-sm-4"><a herf="#">Профиль</a></div>
+                <div class="col-sm-4"><a herf="{{route('to_catalog_page')}}">Каталог игр</a></div>
+                <div class="col-sm-4"><a herf="{{route('to_profile_page', }}">Профиль</a></div>
             </div>
         </div>
     </section>

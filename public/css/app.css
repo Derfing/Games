@@ -1,6 +1,4 @@
 body {
-    margin: 0;
-    padding: 0;
     height: 100%;
 }
 
@@ -38,6 +36,6 @@ section#main-content {
 }
 
 .wrap {
-    padding-top: 40vh;
-    padding-bottom: 50vh;
+    padding-top: 30vh;
+    padding-bottom: 40vh;
 }

@@ -11,37 +11,46 @@
     <body>
     <section id="navigation">
         <div class="container-fluid">
-            <div class="row bg-dark text-white text-center">
-                <div class="col-sm-4"><a herf="#">На главную</a></div>
-                <div class="col-sm-4"><a herf="{{route('to_catalog_page')}}">Каталог игр</a></div>
-                <div class="col-sm-4"><a herf="{{route('to_profile_page', }}">Профиль</a></div>
+            <div class="row bg-dark text-center">
+
+                @auth
+                        <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>
+                        <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_catalog_page')}}">Каталог игр</a></div>
+                        <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_profile_page')}}">Профиль</a></div>
+                @endauth
+                @guest
+                        <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>
+                        <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_catalog_page')}}">Каталог игр</a></div>
+                        <div class="col-sm-4 my-auto"><a class="nav-link disabled" href="#">Для доступа к профилю: <br> зарегистрируйтесь или войдите в аккаунт</a></div>
+                @endguest
             </div>
         </div>
     </section>
+
     @yield('main')
 
     <section id="footer">
         <footer class="container-fluid bg-dark text-white">
             <div class="row">
 
-                <div class="col-sm-4 text-center">
+                <div class="col-md-4 col-sm-4 text-center">
                     <h2>@Derfing</h2>
                 </div>
 
-                <div class="col-sm-2 text-center h4">
+                <div class="col-md-2 col-sm-4 text-center h4">
                     <a href="#">Вконтакте</a>
                 </div>
 
-                <div class="col-sm-2 text-center h4">
+                <div class="col-md-2 col-sm-4 text-center h4">
                     <a href="#">Телеграмм</a>
                 </div>
 
-                <div class="col-sm-2 text-center h4">
+                <div class="col-md-2 col-sm-4 text-center h4">
                     <a href="#">Электронная почта</a>
                 </div>
 
-                <div class="col-sm-2 text-center h4">
-                    <a href="#">GitHub</a>
+                <div class="col-md-2 col-sm-4 text-center h4">
+                    <a href="https://github.com/Derfing">GitHub</a>
                 </div>
 
             </div>

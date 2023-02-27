@@ -13,6 +13,7 @@
                     <button type="submit" class="btn btn-danger">Выйти из профиля</button>
                 </form>
                 <hr>
+                @livewire('game')
             </div>
         </div>
     </section>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -21,6 +22,6 @@ Route::get('/cat', [Controller::class, 'catalog'])->name("to_catalog_page");
 
 Route::get('/profile', [Controller::class, 'profile'])->name("to_profile_page");
 
-Auth::routes();
+Route::get('/game', [GameController::class, 'render'])->name("to_game_page");
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();

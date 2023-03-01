@@ -1,9 +1,9 @@
-<div>
+<div wire:poll>
     <button class="btn btn-info" wire:click="createNewGame">createNewGame</button>
-    <div wire:poll class="btn disabled">
+    <div class="btn disabled">
         @if($lobby)
             @foreach($lobby as $lb)
-                <div>{{$lb->player_1}}</div>
+                <div>{{$lb->id}}</div>
                 <br>
             @endforeach
         @endif

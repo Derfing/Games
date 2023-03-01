@@ -16,7 +16,7 @@
                 @auth
                         <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>
                         <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_catalog_page')}}">Каталог игр</a></div>
-                        <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_profile_page')}}">Профиль</a></div>
+                        <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_profile_page', ['id' => \Illuminate\Support\Facades\Auth::id()])}}">Профиль</a></div>
                 @endauth
                 @guest
                         <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>

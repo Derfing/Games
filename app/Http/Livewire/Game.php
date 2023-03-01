@@ -16,12 +16,14 @@ class Game extends Component
         $game = new Tic_Tac();
         $game->player_1 = Auth::id();
         $game->users()->save($game);
+        $this->showOpenGames();
     }
 
     public function connectToGame(){
         $game = Tic_Tac::where('player_2', null)->first();
         $game->player_2 = Auth::id();
         $game->users()->save($game);
+        $this->showOpenGames();
     }
 
     public function showOpenGames(){

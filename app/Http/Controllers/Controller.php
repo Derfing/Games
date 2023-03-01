@@ -20,8 +20,8 @@ class Controller extends BaseController
     {
         return view('catalog');
     }
-    public function profile()
+    public function profile($id)
     {
-        return view('profile');
+        return view('profile', ['user' => User::find($id)]);
     }
 }

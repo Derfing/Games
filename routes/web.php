@@ -20,7 +20,7 @@ Route::get('/', [Controller::class, 'landing'])->name("to_landing_page");
 
 Route::get('/cat', [Controller::class, 'catalog'])->name("to_catalog_page");
 
-Route::get('/profile', [Controller::class, 'profile'])->name("to_profile_page");
+Route::get('/profile/{id}', [Controller::class, 'profile'])->name("to_profile_page");
 
 Route::get('/game', [GameController::class, 'render'])->name("to_game_page");
 

@@ -1,5 +1,4 @@
 <div wire:poll>
-    <button class="btn btn-info" wire:click="createNewGame">createNewGame</button>
     <div class="btn disabled">
         @if($lobby)
             @foreach($lobby as $lb)

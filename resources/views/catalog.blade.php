@@ -7,18 +7,18 @@
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-sm-12 text-center"><h2>Каталог игр<hr></h2></div>
+                <div class="col-sm-12 text-center"><h2><hr>Каталог игр<hr></h2></div>
             </div>
 
             <div class="card-body">
-                <div class="row">
+                <div class="row p-1">
                     <div class="col-sm-4 text-center">
                         <img class="embed-responsive-1by1 h-100 w-100" src="https://cdn-icons-png.flaticon.com/512/250/250767.png">
                     </div>
                     <div class="col-sm-8">Крестики-нолики — логическая игра между двумя противниками на квадратном поле 3 на 3 клетки или бо́льшего размера (вплоть до «бесконечного поля»). Один из игроков играет «крестиками», второй — «ноликами». В традиционной китайской игре Гомоку используются чёрные и белые камни.</div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12"><a href="#" type="button" class="btn-lg btn-success text-center w-100 h-100">Играть</a></div>
+                    <div class="col-sm-12"><a href="{{route('to_tic_tac_lobby_page')}}" type="button" class="btn-lg btn-success text-center w-100 h-100 my-auto">Играть</a></div>
                 </div>
             </div>
             <hr>
@@ -29,8 +29,8 @@
                     </div>
                     <div class="col-sm-8">Шашки — логическая настольная игра для двух игроков, заключающаяся в передвижении определённым образом фишек-шашек по клеткам шашечной доски. Во время партии каждому игроку принадлежат шашки одного цвета: чёрного или белого (иногда других цветов, один из которых считается тёмным, а другой — светлым). Цель игры — взять все шашки соперника или лишить их возможности хода (запереть). Существует несколько вариантов шашек, различающихся правилами и размерами игрового поля.</div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12"><a href="#" type="button" class="btn-lg btn-success text-center w-100 h-100">Играть</a></div>
+                <div class="row p-1">
+                    <div class="col-sm-12"><a href="#" type="button" class="btn-lg btn-success text-center w-100 h-100 my-auto">Играть</a></div>
                 </div>
             </div>
             <hr>
@@ -43,8 +43,8 @@
 
                         В шахматы обычно играют два игрока (именуемые шахматистами) друг против друга. Также возможна игра одной группы шахматистов против другой или против одного игрока, такие партии зачастую именуются консультационными. Кроме того, существует практика сеансов одновременной игры, когда против одного сильного игрока играет несколько противников, каждый на отдельной доске.</div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12"><a href="#" type="button" class="btn-lg btn-success text-center w-100 h-100">Играть</a></div>
+                <div class="row p-1">
+                    <div class="col-sm-12"><a href="#" type="button" class="btn-lg btn-success text-center w-100 h-100 my-auto">Играть</a></div>
                 </div>
             </div>
         </div>

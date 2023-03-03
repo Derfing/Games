@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class LobbyController extends Controller
 {
-    public function tic_tac_lobby()
+    public function cross_checkers_lobby()
     {
-        return view('tic_tac_lobby');
+        return view('cross_checkers_lobby');
     }
 }

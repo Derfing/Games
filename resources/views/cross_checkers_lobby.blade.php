@@ -12,7 +12,7 @@
                     <hr>
                 </div>
             </div>
-            @livewire('lobby')
+            @livewire('cross-checkers-lobby')
         </div>
     </section>
 @endsection

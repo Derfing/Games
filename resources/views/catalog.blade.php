@@ -18,7 +18,7 @@
                     <div class="col-sm-8">Крестики-нолики — логическая игра между двумя противниками на квадратном поле 3 на 3 клетки или бо́льшего размера (вплоть до «бесконечного поля»). Один из игроков играет «крестиками», второй — «ноликами». В традиционной китайской игре Гомоку используются чёрные и белые камни.</div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12"><a href="{{route('to_tic_tac_lobby_page')}}" type="button" class="btn-lg btn-success text-center w-100 h-100 my-auto">Играть</a></div>
+                    <div class="col-sm-12"><a href="{{route('to_cross_checkers_lobby_page')}}" type="button" class="btn-lg btn-success text-center w-100 h-100 my-auto">Играть</a></div>
                 </div>
             </div>
             <hr>

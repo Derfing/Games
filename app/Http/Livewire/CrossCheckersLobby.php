@@ -2,11 +2,11 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Tic_Tac;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
-use App\Models\Tic_Tac;
-use App\Models\User;
-class Lobby extends Component
+
+class CrossCheckersLobby extends Component
 {
     public Tic_Tac $game;
     public $lobby;
@@ -19,17 +19,20 @@ class Lobby extends Component
         $game = new Tic_Tac();
         $game->player_1 = Auth::id();
         $game->users()->save($game);
+        $this->redirect("/cross-checkers-lobby/$game->id");
     }
     public function fastConnectToGame(){
         $game = Tic_Tac::where('player_2', null)->first();
         $game->player_2 = Auth::id();
         $game->users()->save($game);
+        $this->redirect("/cross-checkers-lobby/$game->id");
     }
     public function connectToGame($id)
     {
         $game = Tic_Tac::where('id', $id)->first();
         $game->player_2 = Auth::id();
         $game->users()->save($game);
+        $this->redirect("/cross-checkers-lobby/$game->id");
     }
     public function showOpenedGames(){
         if (Tic_Tac::where('player_2', null)->first())

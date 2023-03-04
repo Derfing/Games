@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
-use App\Http\Livewire\CrossCheckers;
+use App\Http\Controllers\CrossCheckersController;
 use App\Http\Controllers\LobbyController;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,6 +25,6 @@ Route::get('/profile/{id}', [Controller::class, 'profile'])->name("to_profile_pa
 
 Route::get('/cross-checkers-lobby', [LobbyController::class, 'cross_checkers_lobby'])->name("to_cross_checkers_lobby_page");
 
-Route::get('/cross-checkers-lobby/{id}', [CrossCheckers::class, 'render'])->name("to_cross_checkers_game_page");
+Route::get('/cross-checkers-lobby/{id}', [CrossCheckersController::class, 'cross_checkers_game'])->name("to_cross_checkers_game_page");
 
 Auth::routes();

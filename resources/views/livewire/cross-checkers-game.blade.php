@@ -52,7 +52,7 @@
             </div>
         @else
             <div class="row">
-                <div class="col-sm-12"><h1>Поедитель - {{$game->winner}}</h1></div>
+                <div class="col-sm-12"><h1>Победитель - {{$game->winner}}</h1></div>
             </div>
             <div class="row">
                 <div class="col-sm-12"><h1><a href="{{route('to_cross_checkers_lobby_page')}}">Вернуться назад</a></h1>

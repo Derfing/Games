@@ -25,20 +25,19 @@ class CrossCheckersGame extends Component
 
     public function btn($user_id, $button_id)
     {
-        if (Auth::id() != $this->get_active_player_id()) {
+        if ($user_id != $this->get_active_player_id()) {
+            $symbol = " ";
             if ($this->game->player_1 == $user_id)
                 $symbol = 'X';
             else if ($this->game->player_2 == $user_id)
                 $symbol = 'O';
             $stage = str($user_id) . '-' . str($button_id) . '-' . $symbol;
-            if ((Auth::id() == $this->game->player_1 || Auth::id() == $this->game->player_2) && preg_match("/-$button_id/", $this->game->hist) == 0) {
+            if (($user_id == $this->game->player_1 || $user_id == $this->game->player_2) && preg_match("/-$button_id/", $this->game->hist) == 0) {
                 $this->game->hist .= $stage.'|';
                 $this->game->save();
             }
             $this->get_hist();
         }
-        //$this->game->winner = User::find($user_id)->id;
-
     }
 
     public function get_hist()

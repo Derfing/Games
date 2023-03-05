@@ -30,8 +30,11 @@ class CrossCheckersLobby extends Component
     public function connectToGame($id)
     {
         $game = Tic_Tac::where('id', $id)->first();
-        $game->player_2 = Auth::id();
-        $game->users()->save($game);
+        if($game->player_2 == null)
+        {
+            $game->player_2 = Auth::id();
+            $game->users()->save($game);
+        }
         $this->redirect("/cross-checkers-lobby/$game->id");
     }
     public function showOpenedGames(){

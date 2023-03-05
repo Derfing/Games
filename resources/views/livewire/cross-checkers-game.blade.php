@@ -6,7 +6,7 @@
             <hr>
         </div>
     </div>
-    <div class="game-wrap text-center" wire:poll.500ms="get_hist">
+    <div class="game-wrap text-center" wire:poll.1000ms="get_hist">
         @if (!$game->winner)
             <div class="row">
                 <div class="offset-3 col-sm-2">

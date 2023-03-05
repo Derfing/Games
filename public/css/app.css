@@ -39,3 +39,19 @@ section#main-content {
     padding-top: 30vh;
     padding-bottom: 40vh;
 }
+
+.btn-square {
+    height: 15vh !important;
+    width: 15vh !important;
+    padding: 5px;
+    margin: 5px;
+}
+
+.game-wrap > div > div.col-sm-2 {
+    padding: 0;
+}
+
+.game-wrap > div.row {
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+}

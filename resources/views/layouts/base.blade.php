@@ -38,15 +38,15 @@
                 </div>
 
                 <div class="col-md-2 col-sm-4 text-center h4">
-                    <a href="#">Вконтакте</a>
+                    <a href="https://vk.com/derfing">Вконтакте</a>
                 </div>
 
                 <div class="col-md-2 col-sm-4 text-center h4">
-                    <a href="#">Телеграмм</a>
+                    <a href="https://t.me/derfing">Телеграмм</a>
                 </div>
 
                 <div class="col-md-2 col-sm-4 text-center h4">
-                    <a href="#">Электронная почта</a>
+                    <a href="mailto:derendaevkosta45@gmail.com">Электронная почта</a>
                 </div>
 
                 <div class="col-md-2 col-sm-4 text-center h4">

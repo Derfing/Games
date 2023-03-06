@@ -23,7 +23,7 @@
                 <div class="col-sm-3 p-1">
                     <div class="wrapper border-dark border p-1 w-100 h-100">
                         <h3>Фото: </h3><br>
-                        <img class="embed-responsive" src="data:image/jpg;charset=utf8;base64,{{$user->photo}}" alt="Фото профиля"/>
+                        <img class="embed-responsive profile-image" src="{{asset('photo\\'.$user->photo)}}" alt="Фото профиля"/>
                     </div>
                 </div>
             </div>
@@ -56,13 +56,13 @@
                             <div class="col-sm-3 my-auto">
                                 <label for="photo" class="h-100 w-100">
                                     <h4>Новое Фото</h4>
-                                    <input class="my-auto btn btn-success" type="file" name="photo" accept="image/*,image/jpeg">
+                                    <input class="my-auto btn btn-success" type="file" name="photo" accept="image/jpeg,image/png,image/gif">
                                 </label>
                             </div>
                         </div>
                         <div class="row text-center">
                             <label for="sub" class="h-100 w-100">
-                                <input charset="base64" class="btn btn-info" type="submit" id="sub" value="Изменить данные профиля">
+                                <input class="btn btn-info" type="submit" id="sub" value="Изменить данные профиля">
                             </label>
                         </div>
                     </form>

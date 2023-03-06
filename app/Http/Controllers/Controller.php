@@ -8,6 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\fileExists;
 
 class Controller extends BaseController
 {
@@ -39,7 +40,15 @@ class Controller extends BaseController
         }
         if ($request['photo'])
         {
-            $user->photo = $request['photo'];
+            $photo = explode('.',$_FILES['photo']['name']);
+            $name = 'image_' . uniqid()  . '.' . end($photo);
+            $path = public_path() . '\photo\\';
+            move_uploaded_file($request['photo'], $path . $name);
+            if (file_exists($path.$user->photo))
+            {
+                unlink($path.$user->photo);
+            }
+            $user->photo = $name;
         }
         $user->save();
         return redirect(route("to_profile_page", ['id' => $id]));

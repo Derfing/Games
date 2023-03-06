@@ -23,6 +23,8 @@ Route::get('/catalog', [Controller::class, 'catalog'])->name("to_catalog_page");
 
 Route::get('/profile/{id}', [Controller::class, 'profile'])->name("to_profile_page");
 
+Route::post('/edit_profile/{id}', [Controller::class, 'edit_profile'])->name("edit_profile");
+
 Route::get('/cross-checkers-lobby', [LobbyController::class, 'cross_checkers_lobby'])->name("to_cross_checkers_lobby_page");
 
 Route::get('/cross-checkers-lobby/{id}', [CrossCheckersController::class, 'cross_checkers_game'])->name("to_cross_checkers_game_page");

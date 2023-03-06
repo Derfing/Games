@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('toe_game', function (Blueprint $table) {
             $table->id();
-            $table->primary('id');
             $table->timestamps();
             $table->unsignedBigInteger('player_1')->nullable();
             $table->unsignedBigInteger('player_2')->nullable();

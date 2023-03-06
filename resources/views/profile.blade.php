@@ -7,16 +7,67 @@
         <div class="container-fluid">
             <h1 class="text-center">Мой профиль</h1>
             <hr>
-            <div class="text-center">
-                @if(\Illuminate\Support\Facades\Auth::id() == $user->id)
+            <div class="row">
+                <div class="col-sm-3 p-1">
+                    <div class="wrapper border-dark border p-1 w-100 h-100">
+                        <h3>Имя: </h3><br>
+                        <h3 class="">{{$user->name}}</h3>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center p-1">
+                    <div class="wrapper border-dark border w-100 h-100">
+                        <h3>Описание: </h3><br>
+                        <span>{{$user->description}}</span>
+                    </div>
+                </div>
+                <div class="col-sm-3 p-1">
+                    <div class="wrapper border-dark border p-1 w-100 h-100">
+                        <h3>Фото: </h3><br>
+                        <img class="embed-responsive" src="data:image/jpg;charset=utf8;base64,{{$user->photo}}" alt="Фото профиля"/>
+                    </div>
+                </div>
+            </div>
+            @if(\Illuminate\Support\Facades\Auth::id() == $user->id)
+                <hr>
+                <div class="text-center">
                     <form action="{{route("logout")}}" method="post">
                         @csrf
                         <button type="submit" class="btn btn-danger">Выйти из профиля</button>
                     </form>
                     <hr>
-                @endif
-                <h3 class="text-center">{{$user->name}}</h3>
-            </div>
+                </div>
+
+                <div class="text-center">
+                    <form action="{{route("edit_profile", ['id' => $user->id])}}" enctype="multipart/form-data" method="post">
+                        @csrf
+                        <div class="row">
+                            <div class="col-sm-3 my-auto">
+                                <label for="name" class="h-100 w-100 my-auto">
+                                    <h4>Новое Имя</h4>
+                                    <textarea id="name" name="name" class="form-control" type="text" placeholder="{{$user->name}}"></textarea>
+                                </label>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="description" class="h-100 w-100">
+                                    <h4>Новое Описание</h4>
+                                    <textarea id="description" name="description" class="form-control" type="text" placeholder="{{$user->description}}"></textarea>
+                                </label>
+                            </div>
+                            <div class="col-sm-3 my-auto">
+                                <label for="photo" class="h-100 w-100">
+                                    <h4>Новое Фото</h4>
+                                    <input class="my-auto btn btn-success" type="file" name="photo" accept="image/*,image/jpeg">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <label for="sub" class="h-100 w-100">
+                                <input charset="base64" class="btn btn-info" type="submit" id="sub" value="Изменить данные профиля">
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            @endif
         </div>
     </section>
 @endsection

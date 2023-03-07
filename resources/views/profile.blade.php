@@ -11,8 +11,9 @@
                 <div class="col-sm-3 p-1">
                     <div class="wrapper border-dark border p-1 w-100 h-100">
                         <div class="row">
-                            <div class="col-sm-12">
-                                <h5>Имя: {{$user->name}}</h5>
+                            <div class="text-center col-sm-12">
+                                <h3>Имя: {{$user->name}}</h3>
+                                <br>
                             </div>
                         </div>
                         <div class="row">

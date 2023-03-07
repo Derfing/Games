@@ -10,8 +10,26 @@
             <div class="row">
                 <div class="col-sm-3 p-1">
                     <div class="wrapper border-dark border p-1 w-100 h-100">
-                        <h3>Имя: </h3><br>
-                        <h3 class="">{{$user->name}}</h3>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h5>Имя: {{$user->name}}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h5>К-Н рейтинг: {{10}}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h5>Шаш рейтинг: {{1200}}</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h5>Шах рейтинг: {{5000}}</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-6 text-center p-1">

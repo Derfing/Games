@@ -5,12 +5,11 @@
 @section('main')
     <section id="main-content">
         <div class="container-fluid">
-
             <div class="row">
-                <div class="col-sm-12 text-center"><h2><hr>Каталог игр<hr></h2></div>
+                <div class="col-sm-12 text-center p-5"><h2>Каталог игр</h2></div>
             </div>
 
-            <div class="card-body">
+            <div class="card-body p-3">
                 <div class="row p-1">
                     <div class="col-sm-4 text-center">
                         <img class="embed-responsive-1by1 h-100 w-100" src="https://cdn-icons-png.flaticon.com/512/250/250767.png">
@@ -21,8 +20,8 @@
                     <div class="col-sm-12"><a href="{{route('to_cross_checkers_lobby_page')}}" type="button" class="btn-lg btn-success text-center w-100 h-100 my-auto">Играть</a></div>
                 </div>
             </div>
-            <hr>
-            <div class="card-body">
+            <br>
+            <div class="card-body p-3">
                 <div class="row">
                     <div class="col-sm-4 text-center">
                         <img class="embed-responsive-1by1 h-100 w-100" src="https://u7.uidownload.com/vector/762/202/vector-draughts-board-vector-eps-ai.jpg">
@@ -33,8 +32,8 @@
                     <div class="col-sm-12"><a href="#" type="button" class="btn-lg btn-success text-center w-100 h-100 my-auto">Играть</a></div>
                 </div>
             </div>
-            <hr>
-            <div class="card-body">
+            <br>
+            <div class="card-body p-3">
                 <div class="row">
                     <div class="col-sm-4 text-center">
                         <img class="embed-responsive-1by1 h-100 w-100" src="https://i.pinimg.com/originals/e3/bb/12/e3bb1269580b9d73cecdd8ddcb832e25.jpg">

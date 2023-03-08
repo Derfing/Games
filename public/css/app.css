@@ -1,11 +1,13 @@
 section#header {
     height: 10vh;
     position: relative;
+    padding-bottom: 10px;
 }
 
 section#main {
     min-height: 80vh;
     position: relative;
+    padding-bottom: 10px;
 }
 
 section#footer {
@@ -14,10 +16,6 @@ section#footer {
     right: 0;
     bottom: 0;
     position: relative;
-}
-
-div.wrap {
-
 }
 
 footer a{
@@ -51,4 +49,8 @@ textarea#description {
 img.profile-image {
     max-height: 450px;
     max-width: 800px;
+}
+
+input::-webkit-file-upload-button {
+    visibility: hidden;
 }

@@ -4,7 +4,7 @@
 
 @section('main')
     <div class="container-fluid">
-        <h1 class="text-center">Мой профиль</h1>
+        <h1 class="text-center p-3">Мой профиль</h1>
         <div class="row">
             <div class="col-sm-3">
                 <div class="border-dark border w-100 h-100">
@@ -32,26 +32,24 @@
                 </div>
             </div>
             <div class="col-sm-6 text-center">
-                <div class="wrapper border-dark border w-100 h-100">
+                <div class="border-dark border w-100 h-100">
                     <h3>Описание: </h3><br>
                     <span>{{$user->description}}</span>
                 </div>
             </div>
             <div class="col-sm-3">
-                <div class="wrapper border-dark border w-100 h-100">
+                <div class="border-dark border w-100 h-100">
                     <h3>Фото: </h3><br>
                     <img class="embed-responsive profile-image" src="{{asset('photo\\'.$user->photo)}}" alt="Фото профиля"/>
                 </div>
             </div>
         </div>
         @if(\Illuminate\Support\Facades\Auth::id() == $user->id)
-            <hr>
-            <div class="text-center">
+            <div class="text-center p-3">
                 <form action="{{route("logout")}}" method="post">
                     @csrf
                     <button type="submit" class="btn btn-danger">Выйти из профиля</button>
                 </form>
-                <hr>
             </div>
 
             <div class="text-center">
@@ -59,7 +57,7 @@
                     @csrf
                     <div class="row">
                         <div class="col-sm-3 my-auto">
-                            <label for="name" class="h-100 w-100 my-auto">
+                            <label for="name" class="h-100 w-100 my-auto ">
                                 <h4>Новое Имя</h4>
                                 <textarea id="name" name="name" class="form-control" type="text" placeholder="{{$user->name}}"></textarea>
                             </label>

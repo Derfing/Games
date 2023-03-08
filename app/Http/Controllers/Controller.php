@@ -44,9 +44,9 @@ class Controller extends BaseController
             $name = 'image_' . uniqid()  . '.' . end($photo);
             $path = public_path() . '\photo\\';
             move_uploaded_file($request['photo'], $path . $name);
-            if (file_exists('public\photo\\' . $user->photo))
+            if (file_exists('photo\\'.$user->photo))
             {
-                unlink($path.$user->photo);
+                unlink('photo\\'.$user->photo);
             }
             $user->photo = $name;
         }

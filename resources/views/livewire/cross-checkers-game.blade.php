@@ -1,13 +1,16 @@
 <div>
     <div class="row">
-        <div class="col-sm-6 text-center p-5">
+        <div class="col-sm-5 text-center pt-5">
             <div class="game-prev-wrapper d-flex">
                 <img class="game-prev" src="{{asset('photo/' . \App\Models\User::where('id', $game->player_1)->first()->photo)}}">
             </div>
             <h1>{{\App\Models\User::where('id', $game->player_1)->first()->name}}</h1>
         </div>
+        <div class="col-sm-2 text-center my-auto pt-5">
+            <h1>VS</h1>
+        </div>
         @if ($game->player_2 != null)
-        <div class="col-sm-6 text-center p-5">
+        <div class="col-sm-5 text-center pt-5">
             <div class="game-prev-wrapper d-flex">
                 <img class="game-prev" src="{{asset('photo/' . \App\Models\User::where('id', $game->player_2)->first()->photo)}}">
             </div>
@@ -62,7 +65,7 @@
                 </div>
             </div>
         @else
-            <div class="row">
+            <div class="row p-5">
                 <div class="col-sm-12"><h1>Победитель - {{\App\Models\User::where('id', $game->winner)->first()->name}}</h1></div>
             </div>
             <div class="row">

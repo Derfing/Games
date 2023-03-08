@@ -9,6 +9,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body class="d-flex flex-column min-vh-100">
+
         <section id="header" class="bg-dark text-center d-flex align-items-center">
             <div class="container-fluid">
                 <div class="row">

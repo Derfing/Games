@@ -8,6 +8,7 @@ section#main {
     min-height: 80vh;
     position: relative;
     padding-bottom: 10px;
+    background-color: #d3d9df;
 }
 
 section#footer {

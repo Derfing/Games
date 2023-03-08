@@ -3,25 +3,20 @@
 @section('title', 'Приветственная страница')
 
 @section('main')
-    <section id="header">
-        <div class="container-fluid">
-            <div class="wrap">
-                <h1 class="text-center">Добро пожаловать!</h1>
-                <hr>
-                @guest
-                <div class="row">
-                    <div class="offset-sm-2 col-sm-4">
-                        <a href="{{route("login")}}" class="btn btn-lg btn-primary w-100 h-100">Войти</a>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="{{route("register")}}" class="btn btn-lg btn-info w-100 h-100">Зарегистрироваться</a>
-                    </div>
+    <div class="container-fluid">
+        <h1 class="text-center">Добро пожаловать!</h1>
+        @guest
+            <div class="row">
+                <div class="offset-sm-2 col-sm-4">
+                    <a href="{{route("login")}}" class="btn btn-lg btn-primary w-100 h-100">Войти</a>
                 </div>
-                @endguest
-                @auth
-                    <h3 class="text-center">Вы вошли как: {{\Illuminate\Support\Facades\Auth::user()->name}}</h3>
-                @endauth
+                <div class="col-sm-4">
+                    <a href="{{route("register")}}" class="btn btn-lg btn-info w-100 h-100">Зарегистрироваться</a>
+                </div>
             </div>
-        </div>
-    </section>
+        @endguest
+        @auth
+            <h3 class="text-center">Вы вошли как: {{\Illuminate\Support\Facades\Auth::user()->name}}</h3>
+        @endauth
+    </div>
 @endsection

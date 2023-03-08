@@ -1,11 +1,17 @@
 <div>
     <div class="row">
         <div class="col-sm-6 text-center p-5">
-            <h1>Игрок №1 - {{\App\Models\User::where('id', $game->player_1)->first()->name}}</h1>
+            <div class="game-prev-wrapper d-flex">
+                <img class="game-prev" src="{{asset('photo/' . \App\Models\User::where('id', $game->player_1)->first()->photo)}}">
+            </div>
+            <h1>{{\App\Models\User::where('id', $game->player_1)->first()->name}}</h1>
         </div>
         @if ($game->player_2 != null)
         <div class="col-sm-6 text-center p-5">
-            <h1>Игрок №2 - {{\App\Models\User::where('id', $game->player_2)->first()->name}}</h1>
+            <div class="game-prev-wrapper d-flex">
+                <img class="game-prev" src="{{asset('photo/' . \App\Models\User::where('id', $game->player_2)->first()->photo)}}">
+            </div>
+            <h1>{{\App\Models\User::where('id', $game->player_2)->first()->name}}</h1>
         </div>
         @endif
     </div>

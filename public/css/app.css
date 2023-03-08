@@ -29,8 +29,8 @@ footer a{
 }
 
 .btn-square {
-    height: 15vh !important;
-    width: 15vh !important;
+    height: 12vh !important;
+    width: 12vh !important;
     padding: 5px;
     margin: 5px;
 }
@@ -57,10 +57,25 @@ input::-webkit-file-upload-button {
 
 button.X {
     background-image: url(../resourses/X.png);
-    background-size: 15vh 15vh;
+    background-size: 12vh 12vh;
 }
 
 button.O {
     background-image: url(../resourses/O.png);
-    background-size: 15vh 15vh;
+    background-size: 12vh 12vh;
+}
+
+img.game-prev {
+    max-height: 15vh;
+    max-width: 15vh;
+    margin: auto;
+}
+
+div.game-prev-wrapper {
+    margin: auto;
+    border: solid 5px;
+    color: #1e7e34;
+    width: 17vh;
+    height: 17vh;
+    background-color: black;
 }

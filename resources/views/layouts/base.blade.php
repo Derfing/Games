@@ -13,14 +13,14 @@
             <div class="container-fluid">
                 <div class="row">
                     @auth
-                            <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>
-                            <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_catalog_page')}}">Каталог игр</a></div>
-                            <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_profile_page', ['id' => \Illuminate\Support\Facades\Auth::id()])}}">Профиль</a></div>
+                            <div class="col-sm-4 my-auto h2"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>
+                            <div class="col-sm-4 my-auto h2"><a class="nav-link" href="{{route('to_catalog_page')}}">Каталог игр</a></div>
+                            <div class="col-sm-4 my-auto h2"><a class="nav-link" href="{{route('to_profile_page', ['id' => \Illuminate\Support\Facades\Auth::id()])}}">Профиль</a></div>
                     @endauth
                     @guest
-                            <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>
-                            <div class="col-sm-4 my-auto"><a class="nav-link" href="{{route('to_catalog_page')}}">Каталог игр</a></div>
-                            <div class="col-sm-4 my-auto"><a class="nav-link disabled" href="#">Для доступа к профилю: <br> зарегистрируйтесь или войдите в аккаунт</a></div>
+                            <div class="col-sm-4 my-auto h2"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>
+                            <div class="col-sm-4 my-auto h2"><a class="nav-link" href="{{route('to_catalog_page')}}">Каталог игр</a></div>
+                            <div class="col-sm-4 my-auto h2"><a class="nav-link disabled" href="#">Для доступа к профилю: <br> зарегистрируйтесь или войдите в аккаунт</a></div>
                     @endguest
                 </div>
             </div>
@@ -33,22 +33,19 @@
         <section id="footer" class="bg-dark text-white text-center d-flex align-items-center">
             <footer class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4 col-sm-4 text-center">
+                    <div class="col-md-4 col-sm-4 text-center my-auto">
                         <h2>@Derfing</h2>
                     </div>
-                    <div class="col-md-2 col-sm-4 text-center">
+                    <div class="col-md-2 col-sm-4 text-center h3 my-auto">
                         <a href="https://vk.com/derfing">Вконтакте</a>
                     </div>
-
-                    <div class="col-md-2 col-sm-4 text-center">
+                    <div class="col-md-2 col-sm-4 text-center h3 my-auto">
                         <a href="https://t.me/derfing">Телеграмм</a>
                     </div>
-
-                    <div class="col-md-2 col-sm-4 text-center">
+                    <div class="col-md-2 col-sm-4 text-center h3 my-auto">
                         <a href="mailto:derendaevkosta45@gmail.com">Электронная почта</a>
                     </div>
-
-                    <div class="col-md-2 col-sm-4 text-center">
+                    <div class="col-md-2 col-sm-4 text-center h3 my-auto">
                         <a href="https://github.com/Derfing">GitHub</a>
                     </div>
                 </div>

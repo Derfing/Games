@@ -54,3 +54,13 @@ img.profile-image {
 input::-webkit-file-upload-button {
     visibility: hidden;
 }
+
+button.X {
+    background-image: url(../resourses/X.png);
+    background-size: 15vh 15vh;
+}
+
+button.O {
+    background-image: url(../resourses/O.png);
+    background-size: 15vh 15vh;
+}

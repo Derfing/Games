@@ -5,7 +5,7 @@
 @section('main')
         <div class="container-fluid">
             <div class="row">
-                <div class="offset-3 col-sm-6 text-center">
+                <div class="col-sm-12 text-center">
                     <h2>Крестики-Нолики</h2>
                 </div>
             </div>

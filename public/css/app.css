@@ -2,13 +2,14 @@ section#header {
     height: 10vh;
     position: relative;
     padding-bottom: 10px;
+    display: flex;
 }
 
 section#main {
     min-height: 80vh;
     position: relative;
     padding-bottom: 10px;
-    background-color: #d3d9df;
+    display: flex;
 }
 
 section#footer {
@@ -17,9 +18,15 @@ section#footer {
     right: 0;
     bottom: 0;
     position: relative;
+    display: flex;
 }
 
-footer a{
+a.nav-link {
+    font-size: 1vmax;
+}
+
+a.footer-link {
+    font-size: 1vmax;
     color: #cbd5e0;
 }
 
@@ -52,10 +59,6 @@ img.profile-image {
     max-width: 800px;
 }
 
-input::-webkit-file-upload-button {
-    visibility: hidden;
-}
-
 button.X {
     background-image: url(../resourses/X.png);
     background-size: 12vh 12vh;
@@ -64,6 +67,11 @@ button.X {
 button.O {
     background-image: url(../resourses/O.png);
     background-size: 12vh 12vh;
+}
+
+img.catalog-image {
+    aspect-ratio: 1 / 1;
+    object-fit: cover
 }
 
 img.game-prev {

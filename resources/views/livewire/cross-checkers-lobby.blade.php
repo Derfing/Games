@@ -1,10 +1,10 @@
 <div>
     @auth()
         <div class="row">
-            <div class="col-sm-6 text-center">
+            <div class="col-md-6 text-center pd-1">
                 <button class="w:100 h:100 btn btn-info" wire:click="createNewGame">Создать новую игру</button>
             </div>
-            <div class="col-sm-6 text-center">
+            <div class="col-md-6 text-center">
                 <button class="w:100 h:100 btn btn-info" wire:click="fastConnectToGame">Быстрое подключение к игре</button>
             </div>
         </div>
@@ -12,7 +12,7 @@
             @if ($lobby)
                 @foreach($lobby as $game)
                     <div class="row p-1">
-                        <div class="offset-1 col-sm-10 text-center card-body">
+                        <div class="offset-1 col-10 text-center card-body">
                             <h4>Игра №{{$game->id}}</h4>
                             <button class="btn btn-success text-center w:100 h:100" wire:click="connectToGame({{$game->id}})">Присоединиться</button>
                         </div>
@@ -20,7 +20,7 @@
                 @endforeach
             @else
                 <div class="row text-center p-1">
-                    <div class="col-sm-10 offset-1 card-body">
+                    <div class="col-10 offset-1 card-body">
                         <h4>Ищем свободные игры...</h4>
                     </div>
                 </div>

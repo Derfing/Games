@@ -20,7 +20,7 @@
     </div>
     <div wire:poll.1000ms="get_hist">
         @if (!$game->winner)
-            <div class="p-0 mx-auto">
+            <div class="pb-1 mx-auto">
                 <div class="d-inline">
                     <button wire:click='btn({{\Illuminate\Support\Facades\Auth::id()}}, 0)'
                             class="btn btn-light text-center border-dark btn-square {{$history[0]}}"></button>
@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <div class="p-0">
+            <div class="pb-1">
                 <div class="d-inline">
                     <button wire:click='btn({{\Illuminate\Support\Facades\Auth::id()}}, 3)'
                             class="btn btn-light text-center border-dark btn-square {{$history[3]}}"></button>

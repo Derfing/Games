@@ -8,46 +8,45 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body class="d-flex flex-column min-vh-100">
-
-        <section id="header" class="bg-dark text-center d-flex align-items-center">
+    <body class="d-flex flex-column">
+        <section id="header" class="bg-dark text-center align-items-center">
             <div class="container-fluid">
                 <div class="row">
                     @auth
-                            <div class="col-sm-4 my-auto h2"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>
-                            <div class="col-sm-4 my-auto h2"><a class="nav-link" href="{{route('to_catalog_page')}}">Каталог игр</a></div>
-                            <div class="col-sm-4 my-auto h2"><a class="nav-link" href="{{route('to_profile_page', ['id' => \Illuminate\Support\Facades\Auth::id()])}}">Профиль</a></div>
+                        <div class="col-4 my-auto"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>
+                            <div class="col-4 my-auto"><a class="nav-link" href="{{route('to_catalog_page')}}">Каталог игр</a></div>
+                            <div class="col-4 my-auto"><a class="nav-link" href="{{route('to_profile_page', ['id' => \Illuminate\Support\Facades\Auth::id()])}}">Профиль</a></div>
                     @endauth
                     @guest
-                            <div class="col-sm-4 my-auto h2"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>
-                            <div class="col-sm-4 my-auto h2"><a class="nav-link" href="{{route('to_catalog_page')}}">Каталог игр</a></div>
-                            <div class="col-sm-4 my-auto h2"><a class="nav-link disabled" href="#">Для доступа к профилю: <br> зарегистрируйтесь или войдите в аккаунт</a></div>
+                            <div class="col-4 my-auto"><a class="nav-link" href="{{route('to_landing_page')}}">На главную</a></div>
+                            <div class="col-4 my-auto"><a class="nav-link" href="{{route('to_catalog_page')}}">Каталог игр</a></div>
+                            <div class="col-4 my-auto"><a class="nav-link disabled" href="#">Для доступа к профилю: <br> зарегистрируйтесь или войдите в аккаунт</a></div>
                     @endguest
                 </div>
             </div>
         </section>
 
-        <section id="main" class="text-center d-flex align-items-center">
+        <section id="main" class="text-center align-items-center">
             @yield('main')
         </section>
 
-        <section id="footer" class="bg-dark text-white text-center d-flex align-items-center">
+        <section id="footer" class="bg-dark text-white text-center align-items-center">
             <footer class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4 text-center my-auto">
-                        <h2>@Derfing</h2>
+                <div class="row justify-content-around">
+                    <div class="col-2 text-center my-auto">
+                        <a class="footer-link">@Derfing</a>
                     </div>
-                    <div class="col-md-2 col-sm-4 text-center h3 my-auto">
-                        <a href="https://vk.com/derfing">Вконтакте</a>
+                    <div class="col-2 text-center my-auto">
+                        <a class="footer-link" href="https://vk.com/derfing">Вконтакте</a>
                     </div>
-                    <div class="col-md-2 col-sm-4 text-center h3 my-auto">
-                        <a href="https://t.me/derfing">Телеграмм</a>
+                    <div class="col-2 text-center my-auto">
+                        <a class="footer-link" href="https://t.me/derfing">Телеграмм</a>
                     </div>
-                    <div class="col-md-2 col-sm-4 text-center h3 my-auto">
-                        <a href="mailto:derendaevkosta45@gmail.com">Электронная почта</a>
+                    <div class="col-2 text-center my-auto">
+                        <a class="footer-link" href="mailto:derendaevkosta45@gmail.com">Электронная почта</a>
                     </div>
-                    <div class="col-md-2 col-sm-4 text-center h3 my-auto">
-                        <a href="https://github.com/Derfing">GitHub</a>
+                    <div class="col-2 text-center my-auto">
+                        <a class="footer-link" href="https://github.com/Derfing">GitHub</a>
                     </div>
                 </div>
             </footer>

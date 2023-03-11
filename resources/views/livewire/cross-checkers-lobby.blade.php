@@ -1,11 +1,11 @@
 <div>
     @auth()
         <div class="row">
-            <div class="col-md-6 text-center pd-1">
-                <button class="w:100 h:100 btn btn-info" wire:click="createNewGame">Создать новую игру</button>
+            <div class="col-6 text-center">
+                <button class="btn btn-lg btn-info h-100" wire:click="createNewGame">Создать новую игру</button>
             </div>
-            <div class="col-md-6 text-center">
-                <button class="w:100 h:100 btn btn-info" wire:click="fastConnectToGame">Быстрое подключение к игре</button>
+            <div class="col-6 text-center h-100">
+                <button class="btn btn-lg btn-info" wire:click="fastConnectToGame">Быстрое подключение к игре</button>
             </div>
         </div>
         <div wire:poll="showOpenedGames">

@@ -6,7 +6,7 @@
     <section id="main-content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12 text-center p-5"><h2>Каталог игр</h2></div>
+                <div class="col-sm-12 text-center p-5"><h4>Каталог игр</h4></div>
             </div>
 
             <div class="card-body p-3">

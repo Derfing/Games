@@ -26,12 +26,6 @@ a.nav-link, a.footer-link{
     color: #cbd5e0;
 }
 
-.card-body {
-    border: solid 8px;
-    border-radius: 10px;
-    font-size: x-large;
-}
-
 .btn-square {
     height: 12vmin !important;
     width: 12vmin !important;

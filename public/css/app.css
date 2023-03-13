@@ -26,11 +26,21 @@ a.nav-link, a.footer-link{
     color: #cbd5e0;
 }
 
+span.in-game-nickname {
+    font-size: 3vmin;
+}
+
 .btn-square {
     height: 12vmin !important;
     width: 12vmin !important;
-    padding: 5px;
-    margin: 5px;
+}
+
+.game-wrapper {
+    margin: auto;
+    border: black 3px solid;
+    border-radius: 30px;
+    width: 50vmin;
+    height: 50vmin;
 }
 
 .game-card {
@@ -56,12 +66,12 @@ img.profile-image {
 
 button.X {
     background-image: url(../resourses/X.png);
-    background-size: 12vh 12vh;
+    background-size: 12vmin 12vmin;
 }
 
 button.O {
     background-image: url(../resourses/O.png);
-    background-size: 12vh 12vh;
+    background-size: 12vmin 12vmin;
 }
 
 img.catalog-image {

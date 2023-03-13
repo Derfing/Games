@@ -33,7 +33,10 @@ a.nav-link, a.footer-link{
     margin: 5px;
 }
 
-.card-body
+.game-card {
+    border: black 3px solid;
+    border-radius: 30px;
+}
 
 textarea#name{
     min-width: 100%;

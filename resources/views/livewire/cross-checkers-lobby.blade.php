@@ -11,8 +11,8 @@
         <div wire:poll="showOpenedGames">
             @if ($lobby)
                 @foreach($lobby as $game)
-                    <div class="row p-1">
-                        <div class="offset-1 col-10 text-center card-body">
+                    <div class="row p-2">
+                        <div class="mx-auto p-2 col-6 text-center game-card">
                             <h4>Игра №{{$game->id}}</h4>
                             <button class="btn btn-success text-center w:100 h:100" wire:click="connectToGame({{$game->id}})">Присоединиться</button>
                         </div>
@@ -20,7 +20,7 @@
                 @endforeach
             @else
                 <div class="row text-center p-1">
-                    <div class="col-10 offset-1 card-body">
+                    <div class="col-10 offset-1 game-card">
                         <h4>Ищем свободные игры...</h4>
                     </div>
                 </div>

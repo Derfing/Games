@@ -25,14 +25,17 @@ class CrossCheckersLobby extends Component
     }
     public function fastConnectToGame(){
         $game = Tic_Tac::where('player_2', null)->first();
-        $game->player_2 = Auth::id();
-        $game->users()->save($game);
+        if ($game->player_1 != Auth::id())
+        {
+            $game->player_2 = Auth::id();
+            $game->users()->save($game);
+        }
         $this->redirect("/cross-checkers-lobby/$game->id");
     }
     public function connectToGame($id)
     {
         $game = Tic_Tac::where('id', $id)->first();
-        if($game->player_2 == null)
+        if($game->player_2 == null && $game->player_1 != Auth::id())
         {
             $game->player_2 = Auth::id();
             $game->users()->save($game);

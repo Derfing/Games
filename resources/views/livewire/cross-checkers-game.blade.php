@@ -1,16 +1,16 @@
 <div>
     <div class="row">
-        <div class="col-5 text-center pt-5">
+        <div class="col-5 text-center">
             <div class="game-prev-wrapper d-flex">
                 <img class="game-prev" src="{{asset('photo/' . \App\Models\User::where('id', $game->player_1)->first()->photo)}}">
             </div>
             <span class="in-game-nickname">{{\App\Models\User::where('id', $game->player_1)->first()->name}}</span>
         </div>
-        <div class="col-2 text-center my-auto pt-5">
+        <div class="col-2 text-center my-auto">
             <span class="in-game-nickname">VS</span>
         </div>
         @if ($game->player_2 != null)
-        <div class="col-5 text-center pt-5">
+        <div class="col-5 text-center">
             <div class="game-prev-wrapper d-flex">
                 <img class="game-prev" src="{{asset('photo/' . \App\Models\User::where('id', $game->player_2)->first()->photo)}}">
             </div>

@@ -4,9 +4,15 @@
             <div class="col-6 text-center">
                 <button class="btn btn-lg btn-info h-100" wire:click="createNewGame">Создать новую игру</button>
             </div>
+            @if ($count_opened_games > 0)
             <div class="col-6 text-center h-100">
                 <button class="btn btn-lg btn-info" wire:click="fastConnectToGame">Быстрое подключение к игре</button>
             </div>
+            @else
+                <div class="col-6 text-center h-100">
+                    <button class="btn btn-lg btn-info disabled">Нет свободных игр</button>
+                </div>
+            @endif
         </div>
         <div wire:poll="showOpenedGames">
             @if ($lobby)
@@ -19,7 +25,7 @@
                     </div>
                 @endforeach
             @else
-                <div class="row text-center p-1">
+                <div class="row text-center p-3">
                     <div class="col-10 offset-1 game-card">
                         <h4>Ищем свободные игры...</h4>
                     </div>

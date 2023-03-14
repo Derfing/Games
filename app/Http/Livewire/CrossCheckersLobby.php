@@ -10,9 +10,11 @@ class CrossCheckersLobby extends Component
 {
     public Tic_Tac $game;
     public $lobby;
+    public $count_opened_games;
 
     public function mount()
     {
+        $this->checkOpenedGames();
         $this->showOpenedGames();
     }
     public function createNewGame(){
@@ -42,5 +44,10 @@ class CrossCheckersLobby extends Component
             $this->lobby = Tic_Tac::where('player_2', null)->get();
         else
             $this->lobby = null;
+    }
+
+    public function checkOpenedGames()
+    {
+        $this->count_opened_games = Tic_Tac::where('player_2', null)->count();
     }
 }

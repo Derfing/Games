@@ -30,23 +30,24 @@ class Controller extends BaseController
     public function edit_profile($id, Request $request)
     {
         $user = Auth::user();
-        if ($request['name'])
+        if ($id == $user->id)
         {
-           $user->name = $request['name'];
+
         }
-        if ($request['description'])
-        {
+
+        if ($request['name']) {
+            $user->name = $request['name'];
+        }
+        if ($request['description']) {
             $user->description = $request['description'];
         }
-        if ($request['photo'])
-        {
-            $photo = explode('.',$_FILES['photo']['name']);
+        if ($request['photo']) {
+            $photo = explode('.', $_FILES['photo']['name']);
             $name = 'image_' . uniqid()  . '.' . end($photo);
             $path = public_path() . '\photo\\';
             move_uploaded_file($request['photo'], $path . $name);
-            if (file_exists('photo\\'.$user->photo) && $user->photo != null)
-            {
-                unlink('photo\\'.$user->photo);
+            if (file_exists('photo\\' . $user->photo) && $user->photo != null) {
+                unlink('photo\\' . $user->photo);
             }
             $user->photo = $name;
         }

@@ -29,13 +29,13 @@ class Controller extends BaseController
 
     public function edit_profile($id, Request $request)
     {
-
-        $user = new UserControl($id);
-        $user->changeName($request['name']);
-        $user->changeDescription($request['description']);
-        $user->changeProfileImage($_FILES['photo']['tmp_name'], $_FILES['photo']['name']);
-        $user->saveChanges();
-
+        if (Auth::id() == $id){
+            $user = new UserControl($id);
+            $user->changeName($request['name']);
+            $user->changeDescription($request['description']);
+            $user->changeProfileImage($_FILES['photo']['tmp_name'], $_FILES['photo']['name']);
+            $user->saveChanges();
+        }
         return redirect(route("to_profile_page", ['id' => $id]));
     }
 }

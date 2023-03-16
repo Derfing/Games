@@ -8,6 +8,9 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Classes\UserControl;
+use UserControl as GlobalUserControl;
+
 use function PHPUnit\Framework\fileExists;
 
 class Controller extends BaseController
@@ -29,29 +32,15 @@ class Controller extends BaseController
 
     public function edit_profile($id, Request $request)
     {
-        $user = Auth::user();
-        if ($id == $user->id)
+        if ($id == Auth::user())
         {
-
+            $user = new GlobalUserControl($id);
+            $user->changeName($request['name']);
+            $user->changeDescription($request['description']);
+            $user->changeProfileImage($request['photo'], $_FILES['photo']['name']);
+            $user->saveChanges();
         }
 
-        if ($request['name']) {
-            $user->name = $request['name'];
-        }
-        if ($request['description']) {
-            $user->description = $request['description'];
-        }
-        if ($request['photo']) {
-            $photo = explode('.', $_FILES['photo']['name']);
-            $name = 'image_' . uniqid()  . '.' . end($photo);
-            $path = public_path() . '\photo\\';
-            move_uploaded_file($request['photo'], $path . $name);
-            if (file_exists('photo\\' . $user->photo) && $user->photo != null) {
-                unlink('photo\\' . $user->photo);
-            }
-            $user->photo = $name;
-        }
-        $user->save();
         return redirect(route("to_profile_page", ['id' => $id]));
     }
 }

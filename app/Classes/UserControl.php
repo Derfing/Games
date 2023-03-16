@@ -21,7 +21,7 @@ class UserControl
     public function changeName($name): void
     {
         if (isset($name)) {
-            if (isset(User::where('name', $name)->first())) {
+            if (User::where('name', $name)->first()) {
                 $this->errors .= "This name aleready exist.";
             } else {
                 $this->user->name = $name;

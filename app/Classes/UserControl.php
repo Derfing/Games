@@ -1,16 +1,18 @@
 <?php
 
+namespace App\Classes;
+
 use App\Models\User;
 
 class UserControl
 {
     private User $user;
-    public string $errors;
-    public string $warnings;
+    public string $errors = "";
+    public string $warnings = "";
 
     public function __construct($id)
     {
-        $this->user = User::where('id', $id);
+        $this->user = User::where('id', $id)->first();
     }
 
     public function deleteUser(): void
@@ -27,7 +29,7 @@ class UserControl
                 $this->user->name = $name;
             }
         } else {
-            $this->errors .= "Empty name.";
+            $this->warnings .= "Empty name.";
         }
     }
 
@@ -40,23 +42,23 @@ class UserControl
                 $this->user->description = $description;
             }
         } else {
-            $this->errors .= "Empty description.";
+            $this->warnings .= "Empty description.";
         }
     }
 
-    public function changeProfileImage($name, $image): void // $_FILES['photo']['name']
+    public function changeProfileImage($file, $image): void
     {
-        if (isset($photo)) {
+        if (isset($file) && isset($image)) {
             $photo = explode('.', $image);
             $name = 'image_' . uniqid()  . '.' . end($photo);
             $path = public_path() . '\photo\\';
-            move_uploaded_file($name, $path . $name);
+            move_uploaded_file($file, $path . $name);
             if (file_exists('photo\\' . $this->user->photo) && $this->user->photo != null) {
                 unlink('photo\\' . $this->user->photo);
             }
             $this->user->photo = $name;
         } else {
-            $this->errors .= "Empty image.";
+            $this->warnings .= "Empty image.";
         }
     }
 

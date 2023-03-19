@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\CrossCheckersController;
@@ -30,5 +31,7 @@ Route::post('/delete_profile/{id}', [Controller::class, 'delete_profile'])->name
 Route::get('/cross-checkers-lobby', [LobbyController::class, 'cross_checkers_lobby'])->name("to_cross_checkers_lobby_page");
 
 Route::get('/cross-checkers-lobby/{id}', [CrossCheckersController::class, 'cross_checkers_game'])->name("to_cross_checkers_game_page");
+
+Route::get('/logout', [LoginController::class, 'logout']);
 
 Auth::routes();

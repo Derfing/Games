@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
-use App\Models\Tic_Tac;
+use App\Models\CrossCheckers;
 
 class CrossCheckersGame extends Component
 {
@@ -14,7 +14,7 @@ class CrossCheckersGame extends Component
     public $temp;
     public function mount($game_id)
     {
-        $this->game = Tic_Tac::find($game_id);
+        $this->game = CrossCheckers::find($game_id);
         $this->history = array(" " , " ", " ", " ", " ", " ", " ", " ", " ");
         $this->get_hist();
     }

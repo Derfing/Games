@@ -46,6 +46,6 @@ class Controller extends BaseController
             $user->deleteUser();
             $user->saveChanges();
         }
-        return redirect(route("logout"));
+        return redirect("/logout");
     }
 }

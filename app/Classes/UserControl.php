@@ -17,7 +17,7 @@ class UserControl
 
     public function deleteUser(): void
     {
-        $this->user->forceDelete();
+        User::find($this->user->id)->forceDelete();
     }
 
     public function changeName($name): void

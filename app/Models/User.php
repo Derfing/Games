@@ -42,8 +42,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function tic_tac()
+    public function cross_checkers()
     {
-        return $this->belongsTo(Tic_Tac::class, 'player_1', 'id');
+        return $this->belongsTo(CrossCheckers::class, 'player_1', 'id');
     }
 }

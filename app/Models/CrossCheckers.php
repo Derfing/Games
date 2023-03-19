@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tic_Tac extends Model
+class CrossCheckers extends Model
 {
     use HasFactory;
 
     public function users()
     {
-        return $this->hasMany(User::class,'id');
+        return $this->hasMany(User::class, 'id');
     }
 
-    protected $table = 'toe_game';
+    protected $table = 'cross_checkers';
     protected $fillable = [
         'player_1',
         'player_2',

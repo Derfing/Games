@@ -1,6 +1,6 @@
 <div>
     @auth()
-        <div class="row">
+        <div wire:poll="checkOpenedGames" class="row">
             <div class="col-6 text-center">
                 <button class="btn btn-lg btn-info h-100" wire:click="createNewGame">Создать новую игру</button>
             </div>

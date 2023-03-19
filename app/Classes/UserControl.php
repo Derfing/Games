@@ -50,6 +50,11 @@ class UserControl
     {
         if (isset($file) && isset($image)) {
             $photo = explode('.', $image);
+            if (!end($photo))
+            {
+                $this->warnings .= "Empty image.";
+                return;
+            }
             $name = 'image_' . uniqid()  . '.' . end($photo);
             $path = public_path() . '\photo\\';
             move_uploaded_file($file, $path . $name);

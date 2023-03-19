@@ -17,7 +17,7 @@ class UserControl
 
     public function deleteUser(): void
     {
-        $this->user->delete();
+        $this->user->forceDelete();
     }
 
     public function changeName($name): void

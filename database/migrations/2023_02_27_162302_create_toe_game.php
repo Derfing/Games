@@ -18,8 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('player_2')->nullable();
             $table->foreign('player_1')->references('id')->on('users');
             $table->foreign('player_2')->references('id')->on('users');
-            $table->unsignedBigInteger('winner')->nullable();
-            $table->foreign('winner')->references('id')->on('users');
+            $table->string('winner')->nullable();
             $table->string('hist')->nullable(); //string for parse
         });
     }

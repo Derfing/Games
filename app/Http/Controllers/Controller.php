@@ -38,4 +38,14 @@ class Controller extends BaseController
         }
         return redirect(route("to_profile_page", ['id' => $id]));
     }
+
+    public function delete_profile($id)
+    {
+        if (Auth::id() == $id){
+            $user = new UserControl($id);
+            $user->deleteUser();
+            $user->saveChanges();
+        }
+        return redirect(route("logout"));
+    }
 }

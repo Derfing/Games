@@ -108,7 +108,7 @@ class CrossCheckersGame extends Component
         }
         else if ($this->get_num_of_stages() > 9)
         {
-            $this->game->winner = 1;
+            $this->game->winner = "Ничья";
         }
 
         $this->game->save();

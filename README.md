@@ -9,8 +9,9 @@ Contact: https://vk.com/derfing
 Check list:
 1. Create cross-checkers main logic; // 100%
 2. Add advanced profile data (rating, description and etc.); // 100%
-3. Adapt interface to small devices; // 0%
+3. Adapt interface to small devices; // 75%
 4. Upgrade cross-checkers with advanced statistic; // 0%
 5. Create checkers page and database for it; // 0%
 6. Create checkers main logic; // 0%
-7. Code refactoring (controllers code -> SRP) // 0%
+7. Code refactoring (controllers code -> SRP) // 10%
+8. Setup websocket for games within polling // 0%

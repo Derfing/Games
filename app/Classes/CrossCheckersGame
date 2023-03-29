@@ -1,0 +1,93 @@
+<?php
+
+namespace App\Classes;
+
+use App\Classes\Game;
+use App\Models\CrossCheckers;
+
+class CrossCheckersGame
+{
+    private $game;
+    public $player_1;
+    public $player_2;
+    public $moves;
+    public $winner;
+
+    public function __construct(int $id)
+    {
+        $game = CrossCheckers::find($id);
+        $this->player_1 = $game->player_1;
+        $this->player_2 = $game->player_2;
+        $this->winner = $game->winner;
+        $this->moves = $this->getMovesArray();
+    }
+    public function calculateGameResult()
+    {
+        $mass = $this->moves;
+
+        if ($mass[0]['symbol'] == $mass[1]['symbol'] && $mass[1]['symbol'] == $mass[2]['symbol'] && $mass[2]['symbol'] != null) {
+            $this->winner = $this->getPlayerIdWithSymbol($mass[2]['symbol']);
+        } elseif ($mass[0]['symbol'] == $mass[4]['symbol'] && $mass[4]['symbol'] == $mass[8]['symbol'] && $mass[8]['symbol'] != null) {
+            $this->winner = $this->getPlayerIdWithSymbol($mass[8]['symbol']);
+        } elseif ($mass[0]['symbol'] == $mass[3]['symbol'] && $mass[3]['symbol'] == $mass[6]['symbol'] && $mass[6]['symbol'] != null) {
+            $this->winner = $this->getPlayerIdWithSymbol($mass[6]['symbol']);
+        } elseif ($mass[6]['symbol'] == $mass[7]['symbol'] && $mass[7]['symbol'] == $mass[8]['symbol'] && $mass[8]['symbol'] != null) {
+            $this->winner = $this->getPlayerIdWithSymbol($mass[8]['symbol']);
+        } elseif ($mass[2]['symbol'] == $mass[5]['symbol'] && $mass[5]['symbol'] == $mass[8]['symbol'] && $mass[8]['symbol'] != null) {
+            $this->winner = $this->getPlayerIdWithSymbol($mass[8]['symbol']);
+        } elseif ($mass[1]['symbol'] == $mass[4]['symbol'] && $mass[4]['symbol'] == $mass[7]['symbol'] && $mass[7]['symbol'] != null) {
+            $this->winner = $this->getPlayerIdWithSymbol($mass[7]['symbol']);
+        } elseif ($mass[3]['symbol'] == $mass[4]['symbol'] && $mass[4]['symbol'] == $mass[5]['symbol'] && $mass[5]['symbol'] != null) {
+            $this->winner = $this->getPlayerIdWithSymbol($mass[5]['symbol']);
+        } elseif ($mass[2]['symbol'] == $mass[4]['symbol'] && $mass[4]['symbol'] == $mass[6]['symbol'] && $mass[6]['symbol'] != null) {
+            $this->winner = $this->getPlayerIdWithSymbol($mass[5]['symbol']);
+        } else if ($this->get_num_of_stages() > 9) {
+            $this->winner = "Ничья";
+        }
+
+        if ($this->winner) {
+            $this->game->save();
+        }
+    }
+
+    public function getMovesArray()
+    {
+        $data = $this->game->hist;
+        $temp = explode('|', $data);
+        for ($i = 0; $i < count($temp) - 1; $i++) {
+            $mass = explode('-', $temp[$i]);
+            $result[] = [
+                'userId' => $mass[0],
+                'btnId' => $mass[1],
+                'symbol' => $mass[2]
+            ];
+        }
+        return $result;
+    }
+
+    public function getPlayerIdWithSymbol($symbol)
+    {
+        if ($symbol == 'X') {
+            return $this->player_1;
+        } else {
+            return $this->player_2;
+        }
+    }
+
+    public function getCountOfMoves()
+    {
+        $history = $this->game->hist;
+        return count(explode('|', $history));
+    }
+
+    public function getLastPlayerId()
+    {
+        $history = $this->game->hist;
+        $temp = explode('|', $history);
+        if (count($temp) > 1)
+        {
+            $mass = explode('-', $temp[$this->get_num_of_stages() - 2]);
+            return (int)$mass[0];
+        }
+    }
+}

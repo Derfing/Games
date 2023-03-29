@@ -9,16 +9,16 @@ use Illuminate\Database\Eloquent\Model;
 
 abstract class Game implements GameInterface
 {
-    public function createGame($nameOfGameModel)
+    static function createGame($nameOfGameModel)
     {
         $newGame = new $nameOfGameModel;
         return $newGame->id();
     }
-    public function deleteGame($nameOfGameModel, int $gameId)
+    static function deleteGame($nameOfGameModel, int $gameId)
     {
         $nameOfGameModel::find($gameId)->forceDelete();
     }
-    public function connectToGame($nameOfGameModel, int $gameId, int $playerId)
+    static function connectToGame($nameOfGameModel, int $gameId, int $playerId)
     {
         $game = $nameOfGameModel::where('id', $gameId)->first();
         if ($game->player_1 == null) {
@@ -28,10 +28,16 @@ abstract class Game implements GameInterface
             $game->player_2 = $playerId;
             $game->save();
         }
-        redirect(route("/game/$nameOfGameModel/$gameId"));
+        redirect("/game/$nameOfGameModel/$gameId");
     }
-    public function fastConnectToGame($nameOfGameModel, int $playerId)
+    static function fastConnectToGame($nameOfGameModel, int $playerId)
     {
-        $game = $na;
+        $game = $nameOfGameModel::where('player_2', null)->first();
+        $gameId = $game->id();
+        if ($game->player_1 != $playerId) {
+            $game->player_2 = $playerId;
+            $game->save();
+        }
+        redirect("/game/$nameOfGameModel/$gameId");
     }
 }

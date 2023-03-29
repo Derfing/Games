@@ -9,28 +9,29 @@ use Illuminate\Database\Eloquent\Model;
 
 abstract class Game implements GameInterface
 {
-    protected $gameModel;
-    protected array $players;
-    public $game;
-
-    public function createGame(int $playerId)
+    public function createGame($nameOfGameModel)
     {
-        $this->game = new $this->gameModel;
-        $this->game->player_1 = $playerId;
-        $this->players[0] = $playerId;
-        $this->game->users()->save($this->game);
+        $newGame = new $nameOfGameModel;
+        return $newGame->id();
     }
-    public function deleteGame(int $gameId)
+    public function deleteGame($nameOfGameModel, int $gameId)
     {
-        $this->gameModel::find($gameId)->forceDelete();
+        $nameOfGameModel::find($gameId)->forceDelete();
     }
-    public function connectToGame(int $gameId, int $playerId)
+    public function connectToGame($nameOfGameModel, int $gameId, int $playerId)
     {
-        if (!in_array($playerId, $this->players))
-            {
-                $this->gameModel::find($gameId)->player_2 = $playerId;
-                $this->players[] = $playerId;
-                $this->game->users()->save($this->game);
-            }
+        $game = $nameOfGameModel::where('id', $gameId)->first();
+        if ($game->player_1 == null) {
+            $game->player_1 = $playerId;
+            $game->save();
+        } elseif ($game->player_1 != $playerId && $game->player_2 == null) {
+            $game->player_2 = $playerId;
+            $game->save();
+        }
+        redirect(route("/game/$nameOfGameModel/$gameId"));
+    }
+    public function fastConnectToGame($nameOfGameModel, int $playerId)
+    {
+        $game = $na;
     }
 }

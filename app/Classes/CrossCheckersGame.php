@@ -2,7 +2,6 @@
 
 namespace App\Classes;
 
-use App\Classes\Game;
 use App\Models\CrossCheckers;
 
 class CrossCheckersGame
@@ -12,7 +11,7 @@ class CrossCheckersGame
     public $player_2;
     public $moves;
 
-    public function __construct(int $id)
+    public function __construct($id)
     {
         $game = CrossCheckers::find($id);
         $this->player_1 = $game->player_1;

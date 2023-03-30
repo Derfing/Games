@@ -4,6 +4,6 @@
 
 @section('main')
     <div class="container-fluid">
-        <livewire:cross-checkers-game :game_id="$id"/>
+        <livewire:cross-checkers-game :gameId="$id"/>
     </div>
 @endsection
